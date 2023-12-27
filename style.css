@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;600;700&display=swap");
+
+:root {
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --border-middle-card: hsla(240, 80%, 98%, 0.228);
+  --border-color: hsl(234, 14%, 74%, 0.5);
+  --slider-color: #696fdd;
+  --slider-hover-color: hsl(236, 72%, 79%);
+  --linear: linear-gradient(-90deg, #696fdd 0%, #a3a8f0 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: url(images/bg-bottom.svg) no-repeat bottom left,
+    url(images/bg-top.svg) no-repeat top -3% right -230%,
+    var(--Very-Light-Grayish-Blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: min(90%, 73.75em);
+  text-align: center;
+}
+
+.pricing-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4.2rem;
+  gap: 1.9rem;
+}
+
+.pricing-title h1 {
+  color: var(--Grayish-Blue);
+  line-height: 1.7;
+  font-size: clamp(1.8125rem, 1.6875rem + 0.625vw, 2.1875rem);
+}
+
+.pricing-title .switch-annually-monthly {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--Light-Grayish-Blue);
+  margin-bottom: 0.8rem;
+}
+
+.pricing-title .switch-annually-monthly h3 {
+  font-size: clamp(1rem, 0.9583rem + 0.2083vw, 1rem);
+}
+
+.pricing-cards {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-weight: bold;
+  color: var(--Dark-Grayish-Blue);
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  -webkit-box-shadow: 0px 34px 105px -55px rgba(97, 97, 97, 0.75);
+  -moz-box-shadow: 0px 34px 105px -55px rgba(97, 97, 97, 0.75);
+  box-shadow: 0px 34px 105px -55px rgba(97, 97, 97, 0.75);
+}
+
+.card-title {
+  font-size: clamp(1rem, 0.9565rem + 0.2174vw, 1.2rem);
+  color: var(--Grayish-Blue);
+}
+
+.card-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: clamp(4.05rem, 3.7723rem + 1.3885vw, 4.8831rem);
+}
+
+.card-price span {
+  font-size: 2.8rem;
+}
+
+.card-details {
+  width: 100%;
+  margin-block: 1rem;
+}
+
+.card-details h4 {
+  font-size: 1rem;
+  padding-block: 1rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--Grayish-Blue);
+}
+
+.card-details h4:nth-child(2),
+.card-details h4:nth-child(3) {
+  border-top: 0;
+}
+
+button {
+  width: 100%;
+  padding: 1em;
+  font-size: 0.9em;
+  border-radius: 5px;
+  border: 0;
+  background: var(--linear);
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 1px solid var(--slider-color);
+  background: #fff;
+  color: var(--slider-color);
+}
+
+/* ---------------------------- Middle Card ------------------------ */
+.card.middle {
+  color: #fff;
+  background: var(--linear);
+}
+
+.card.middle .card-title {
+  color: #fff;
+}
+
+.card.middle .card-details h4 {
+  color: #fff;
+  border-top: 1px solid var(--border-middle-card);
+  border-bottom: 1px solid var(--border-middle-card);
+}
+
+.card.middle button {
+  background: #fff;
+  color: var(--slider-color);
+}
+
+.card.middle button:hover {
+  border: 1px solid #fff;
+  background: var(--linear);
+  color: #fff;
+}
+
+.card.middle .card-details h4:nth-child(2),
+.card.middle .card-details h4:nth-child(3) {
+  border-top: 0;
+}
+
+/* ---------------------- the Switch ---------------------------- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--linear);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: var(--linear);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--linear);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:hover {
+  background: var(--slider-hover-color);
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ---------- Utility Classes ------------------------- */
+.hide {
+  display: none;
+}
+
+/* ----------------------------- Media Queries -------------------------- */
+
+@media (width > 1000px) {
+  body {
+    background: url(images/bg-bottom.svg) no-repeat bottom left,
+      url(images/bg-top.svg) no-repeat top right, var(--Very-Light-Grayish-Blue);
+    min-height: 100vh;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0rem;
+    padding: 0em;
+  }
+
+  .pricing-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4.2em 4.2em 1.9em 4.2em;
+    gap: 1.9rem;
+  }
+
+  .card {
+    height: 31.8em;
+    gap: 0.8em;
+    padding: 2.5em 2em;
+    align-self: center;
+  }
+
+  .card:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card:nth-child(3) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card-title {
+    margin-bottom: 0.5em;
+  }
+
+  .card-details h4 {
+    line-height: 1.6;
+    padding-block: 1rem;
+  }
+
+  .card.middle {
+    height: 35em;
+    color: #fff;
+    background: var(--linear);
+  }
+}
+
+
