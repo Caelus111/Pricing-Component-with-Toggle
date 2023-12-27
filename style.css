@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: min(90%, 73.75em);
+  width: min(90%, 65.625em);
   text-align: center;
 }
 
@@ -124,7 +124,7 @@ body {
 
 button {
   width: 100%;
-  padding: 1em;
+  padding: .9em;
   font-size: 0.9em;
   border-radius: 5px;
   border: 0;
@@ -275,7 +275,7 @@ input:checked + .slider:before {
   }
 
   .card {
-    height: 31.8em;
+    height: 29em;
     gap: 0.8em;
     padding: 2.5em 2em;
     align-self: center;
@@ -291,7 +291,7 @@ input:checked + .slider:before {
   }
 
   .card-title {
-    margin-bottom: 0.5em;
+    margin-top: 1em;
   }
 
   .card-details h4 {
@@ -300,9 +300,13 @@ input:checked + .slider:before {
   }
 
   .card.middle {
-    height: 35em;
+    height: 31em;
     color: #fff;
     background: var(--linear);
+  }
+
+  button {
+    margin-bottom: 1rem;
   }
 }
 
